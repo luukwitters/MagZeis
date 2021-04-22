@@ -1,0 +1,299 @@
+/*
+ * Styling for our dark mode application
+ *
+ *
+ * In the document can some tag styling found outside of html, body, root and selection.
+ * I'am using it only for basic styling and never for specific styling.
+ * It is a best practice to use it as little as possible.
+ */
+
+:root {
+    --mainColor: #3282B8;
+    --mainTextColor: #BBe1FA;
+    --mainBackgroundColor: #1B262C;
+
+    --secondaryColor: #0F4C75;
+
+    --feedbackGood: #28A745;
+    --feedbackBad: #DC3545;
+}
+
+/* Basic page styling */
+html, body {
+    position: relative;
+    height: auto;
+    max-height: 100%;
+    width: 100%;
+    font-size: 1em;
+    font-family: 'Helvetica', sans-serif;
+    line-height: 1.15;
+    color: var(--mainTextColor);
+    background-color: var(--mainBackgroundColor);
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+    color: var(--mainBackgroundColor);
+    background-color: var(--mainColor);
+}
+
+/* Main section styling */
+.main {
+    position: relative;
+    display: block;
+    width: calc(100% - 1em);
+    max-width: 1200px;
+    height: auto;
+    margin: auto;
+    padding-top: 1.5em;
+}
+
+/* Basic title styling */
+.title {
+    color: var(--mainColor);
+    font-size: 3em;
+    margin: 1em 0 0.5em;
+}
+
+/* Overview options styling */
+.overview__options {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 1em 0;
+}
+
+/* Overview link styling */
+.overview__link {
+    padding: 5px 10px;
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.25s ease-in;
+}
+
+.overview__link:hover {
+    filter: brightness(85%);
+}
+
+/* basic table styling */
+.overview__table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.overview__empty {
+    text-align: center;
+}
+
+/* Table row styling */
+.overview__table td,
+.overview__table th {
+    border-top: 1px solid var(--secondaryColor);
+    border-bottom: 1px solid var(--secondaryColor);
+    padding: 0.75em;
+    vertical-align: top;
+}
+
+/* Table row styling */
+.overview__table tr:hover {
+    background-color: var(--secondaryColor);
+}
+
+/* Table head styling */
+.overview__table thead {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+/* Overview table options */
+.table__options {
+  text-align: right;
+}
+
+/* Add button styling */
+.overview__add {
+    color: #FFF;
+    background-color: var(--feedbackGood);
+}
+
+/* Update button styling */
+.overview__change {
+    color: #FFF;
+    background-color: var(--mainColor);
+    margin-left: 10px;
+}
+
+/* Delete button styling */
+.overview__delete {
+    color: #FFF;
+    background-color: var(--feedbackBad);
+    margin-left: 10px;
+}
+
+/* Basic form styling */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form row styling */
+.form__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1em 0;
+}
+
+/* From column styling */
+.form__column {
+    width: 49%;
+    max-width: 500px;
+}
+
+/* Form input styling */
+.form__input {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--mainBackgroundColor);
+    background-color: var(--mainTextColor);
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/* From button styling */
+.form__button {
+    padding: 5px 10px;
+    color: #FFF;
+    background-color: var(--secondaryColor);
+    border-color: var(--mainColor);
+    border-radius: 3px;
+    transition: all 0.25s ease-in;
+}
+
+.form__button:hover {
+    filter: brightness(85%);
+}
+
+/* Modal styling, if it is over top blame BP5 */
+/* Create an container for the modal to be in */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+}
+
+/* Styling for when the modal is visible, this makes it stay at the top of the screen in the center */
+.modal--visible {
+    display: flex;
+}
+
+/* Styling the content of the modal */
+.modal__content {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    margin-top: 500px;
+    background-color: var(--mainBackgroundColor);
+    border: 2px solid rgba(187, 225, 250, 0.4);
+    border-collapse: collapse;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Styling for when the modal is visible. This makes it so it
+ like the model comes from out of nowhere */
+.modal__content-show {
+    margin-top: 2.5rem;
+}
+
+/* Modal header style */
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0.5em;
+}
+
+/* Model body styling */
+.modal__body {
+    padding: 1em 0.5em;
+    border: 2px solid rgba(187, 225, 250, 0.4);
+    border-left: none;
+    border-right: none;
+}
+
+/* Modal footer styling */
+.modal__footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em 0.5em;
+    font-size: 0.75em;
+}
+
+/* Modal title styling */
+.modal__title {
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* Modal close X next to the title */
+.modal__close {
+    display: inline-block;
+    color: var(--mainTextColor);
+    background: transparent;
+    border: none;
+    font-size: 1em;
+    margin-right: 0.5em;
+}
+
+/* Modal body text */
+.modal__text {
+    font-size: 0.75em;
+    margin: 0;
+}
+
+/* Modal cancel button */
+.modal__cancel {
+    color: #FFF;
+    background-color: var(--mainColor);
+    margin-left: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.25s ease-in;
+}
+
+.modal__cancel:hover {
+    filter: brightness(85%);
+}
+
+.modal__submit {
+    color: #FFF;
+    background-color: var(--feedbackBad);
+    margin-left: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.25s ease-in;
+}
